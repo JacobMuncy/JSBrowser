@@ -1,3 +1,6 @@
+Please Note: This is the fast release branch that you are viewing. This is so that new prototypes can be pushed out fast. That means there will be more bugs and the commit messages may not be nice or as accurate as they should be. Don't contact me over any mistakes that are present here. The code/commit messages will be cleaned up and shiped out through the master branch.
+
+
 #&nbsp;![Logo](https://cloud.githubusercontent.com/assets/7266075/9254929/15448684-419b-11e5-8110-41757c572fe8.png) JavaScript Browser
 A web browser built with JavaScript as a Windows app.<br />
 http://microsoftedge.github.io/JSBrowser/
