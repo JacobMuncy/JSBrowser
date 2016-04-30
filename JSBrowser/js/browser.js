@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
     "use strict";
 
     // Enable nodelists to work with the spread operator
@@ -87,16 +87,68 @@
             "urlDisplay": document.querySelector("#urlDisplay"),
             "webview": document.querySelector("#WebView"),
 
+
+
+
+
+            // Settings Menu
+
+            "levelOneShow": function () {
+                this.gobacktolevelone.style.display = "none";
+                this.developlerOptions.style.display = "block";
+                this.personalization.style.display = "block";
+                this.fullscreenButton.style.display = "block";
+                this.coloroptions.style.display = "none";
+            },
+
+            "levelOneHide": function () {
+            this.gobacktolevelone.style.display = "block";
+            this.developlerOptions.style.display = "none";
+            this.clearCacheButton.style.display = "none";
+            this.clearFavButton.style.display = "none";
+            this.personalization.style.display = "none";
+            this.fullscreenButton.style.display = "none";
+            this.coloroptions.style.display = "none";
+
+            },
+
+
+            "showColorPalette": function (ColorPaletteIDNumber) {
+                this.ColorPaletteID = ColorPaletteIDNumber;
+                this.setToDefaultColor.style.display = "block";
+                this.setToColorRed.style.display = "block";
+                this.setToColorBlue.style.display = "block";
+
+            },
+
+            "hideColorPalette": function () {
+                this.setToDefaultColor.style.display = "hide";
+                this.setToColorRed.style.display = "hide";
+                this.setToColorBlue.style.display = "hide";
+
+            },
+
+
+
             // Personalization Menu 
             "personalization": document.querySelector("#personalization"),
             "coloroptions": document.querySelector("#coloroptions"),
             "gobackfromnavbarcolor": document.querySelector("#gobackfromnavbarcolor"),
-            "gobackfromcolormenu" : document.querySelector("#gobackfromcolormenu"),
-            "goback": document.querySelector("#goback"),
+            "gobackfromcolormenu" : document.querySelector("#gobackfromcolormenu"),linknavbarcolorwithtitlebar : document.querySelector("#linknavbarcolorwithtitlebar"), linknavbarcolorwithtitlebarcheckbox : document.querySelector("#linknavbarcolorwithtitlebarcheckbox"),
+            "gobacktolevelone": document.querySelector("#gobacktolevelone"),
             "navbarcolor": document.querySelector("#navbarcolor"),
-            "defaultnavbarcolor": document.querySelector("#defaultnavbarcolor"),
-            "setNavbarToColorRed": document.querySelector("#navbartored"),
-            "setNavbarToColorBlue": document.querySelector("#navbartoblue")
+            "setToDefaultColor": document.querySelector("#defaultcolor"),
+            "setToColorRed": document.querySelector("#tored"),
+            "setToColorBlue": document.querySelector("#toblue"),
+
+
+            // Developler Options
+            "developlerOptions": document.querySelector("#developlerOptions"),
+
+
+            // Title Bar Color 
+            "titleBarColor" : document.querySelector("#titleBarColor")
+           
         });
 
         // Apply the fullscreen mode
@@ -145,8 +197,6 @@
             this.element.addEventListener("transitionend", onTransitionEnd);
             this.togglePerspectiveAnimation();
 
-            // Reset the title bar colors
-            this.setDefaultAppBarColors();
         };
 
         // Handle keyboard shortcuts
@@ -184,8 +234,7 @@
             setImmediate(() => {
                 this.togglePerspectiveAnimation();
 
-                // Adjust AppBar colors to match new background color
-                this.setOpenMenuAppBarColors();
+
             });
         };
 
